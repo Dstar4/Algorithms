@@ -29,7 +29,7 @@ Carry Out Plan
 """
 
 
-def find_max_profit(prices):   
+def find_max_profit(prices):
     max_profit = None
 
     # loop through list of prices getting the values and index
@@ -37,7 +37,6 @@ def find_max_profit(prices):
 
         # loop through again starting at the next index to get the next values
         for j in range(item + 1, len(prices)):
-
 
             # set current profit to the value of the j loop subtracting the value of the current index.
             current_profit = prices[j] - value
