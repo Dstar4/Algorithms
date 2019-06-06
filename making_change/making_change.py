@@ -1,9 +1,45 @@
 #!/usr/bin/python
+"""
+Understand
+-----------------
+
+
+Plan
+--------------------
+
+
+
+Implement
+--------------------
+
+Look Back 
+-------------------
+
+"""
+
 
 import sys
 
 def making_change(amount, denominations):
   pass 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
