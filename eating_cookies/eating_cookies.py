@@ -9,9 +9,9 @@ Understand
 Plan
 -------------
 - use recursion
-- base cases
-  - if n <= 0 return 0
-- can only be 1, 2, or 3 cookies at a time.
+- base case
+  - if n = 0 return 1
+- can only eat 1, 2, or 3 cookies at a time.
 - call recursive function that moves closer to base case (n = 0)
 -
 
@@ -33,25 +33,38 @@ import sys
 
 
 def eating_cookies(n, cache=None):
-    permutations = 0
-    if n < 0:
-        return 0
+    # set our count to increment
+    count = 0
+    
+    #base case 
     if n == 0:
-        return 1
+        count += 1
+
+    #loop between number of cookies we can eat at a time    
     for i in range(1, 4):
-        if i is not None:
-            recursive_cookies = eating_cookies(n-1)
-            permutations += recursive_cookies
-            print(permutations)
-        else:
-            print("else")
 
-        # print("ways", ways)
+        # subtract cookies eaten at a time from the number of cookies we have
+        # if zero cookies remain, increment.
+        if n - i == 0:
+            count += 1
+
+        # if more than 0 cookes remain go through the function again with the remaining cookies
+        elif n - i > 0:
+            count += eating_cookies(n-i)
+    
+
+    # print("answer", count)
+    return count
 
 
-eating_cookies(3)  # 13
 
 
+
+
+
+
+
+# eating_cookies(3)  # 13
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         num_cookies = int(sys.argv[1])
